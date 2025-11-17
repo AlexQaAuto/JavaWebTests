@@ -38,7 +38,7 @@ public class BaseTest {
         return properties.getProperty("baseUrl");
     }
 
-    public  String getBaseUrl() {
+    public String getBaseUrl() {
         return baseUrl;
     }
 
