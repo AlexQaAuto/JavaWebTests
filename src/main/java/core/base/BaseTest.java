@@ -41,7 +41,6 @@ public class BaseTest {
         return baseUrl;
     }
 
-
     @AfterEach
     public void tearDown() {
         closeWebDriver();
