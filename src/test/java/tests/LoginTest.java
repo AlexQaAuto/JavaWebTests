@@ -13,4 +13,5 @@ public class LoginTest extends BaseTest {
         System.out.println("");
         // Продолжение теста, проверка элементов и т.д.
     }
+
 }
