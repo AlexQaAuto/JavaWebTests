@@ -42,4 +42,9 @@ public class BasePage {
     }
 
 
+    public void setPassword(String number) {
+    }
+
+    public void clickLogin() {
+    }
 }
