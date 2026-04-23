@@ -24,7 +24,7 @@ public class LoginPage extends BasePage {
     private SelenideElement errorMessage = $(".input-e.login_error");
     private SelenideElement errorLoginMessage = $(".class=\".LoginForm-module__error___1xmAD vkuiCaption__sizeYNone vkuiCaption__level1 vkuiTypography__host vkuiTypography__normalize vkuiRootComponent__host");
     private SelenideElement errorPasswordMessage = $(".class=\".LoginForm-module__error___1xmAD vkuiCaption__sizeYNone vkuiCaption__level1 vkuiTypography__host vkuiTypography__normalize vkuiRootComponent__host");
-
+    private SelenideElement goToRecoveryButton = $(" [value='st.go_to_recovery']");
 
     {
         verifyPageElements();
@@ -56,17 +56,20 @@ public class LoginPage extends BasePage {
     //Пустой логин
     @Step("Проверяем видимость сообщения об ошибке пустого логина")
     public boolean isErrorLoginMessageVisible() {
+
         return errorLoginMessage.shouldBe(visible).exists();
     }
 
     @Step("Получаем текст сообщения об ошибке пустого логина")
     public String getErrorLoginMessageText() {
+
         return errorLoginMessage.shouldBe(visible).getText();
     }
 
     //Пустой пароль
     @Step("Проверяем видимость сообщения об ошибке пустого пароля")
     public boolean isErrorPasswordMessageVisible() {
+
         return errorPasswordMessage.shouldBe(visible).exists();
     }
 
@@ -83,10 +86,13 @@ public class LoginPage extends BasePage {
         passwordField.shouldBe(visible).setValue(password);
         passwordField.shouldBe(visible).click();
         loginButton.shouldBe(visible).click();
+        usernameField.setValue(username);
+        passwordField.setValue(password);
     }
 
     @Step("Входим на сайт с пустым логином")
     public void emptylogin() {
+
         loginButton.shouldBe(visible).click();
     }
 
@@ -128,4 +134,11 @@ public class LoginPage extends BasePage {
 
         mailRuButton.shouldBe(visible).click();
     }
+
+    @Step("Нажимаем Восстановить профиль")
+    public void goToRecovery() {
+
+        goToRecoveryButton.shouldBe(visible).click();
+    }
+
 }
